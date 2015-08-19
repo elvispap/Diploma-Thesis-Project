@@ -1,12 +1,10 @@
 from django.conf.urls import patterns, include, url
 from uth_research import views
 from django.contrib import admin
-from django.conf.urls import handler404
-from django.conf.urls import handler500
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
-   
     url(r'^$', views.central_page, name='home'),
     url(r'^home/$', views.central_page, name='home'),
     url(r'^admin/', include(admin.site.urls)),
@@ -25,9 +23,6 @@ urlpatterns = patterns('',
     url(r'^authors/([^/]+)/$',views.author_profile),
     url(r'^authors/([^/]+)/keywords/([^/]+)$',views.author_publications_keyword),
     url(r'^access_db/$', views.access_db),
-
-    
-    
 )
 handler404 = 'views.my_custom_404_view'
 handler500 = 'views.my_custom_500_view'

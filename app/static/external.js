@@ -1,11 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-	$(".citation_clicked").click(function(){
-		console.log("cit");
+    $(".citation_clicked").click(function () {
         $(this).parent().next(".cited_publications_div").slideToggle();
-        
-
     });
-
 
 });
