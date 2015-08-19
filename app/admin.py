@@ -1,14 +1,11 @@
 from django.contrib import admin
 from app.models import *
 
-
 class InlineImage(admin.TabularInline):
     model = image
 
-
 class AuthorAdmin(admin.ModelAdmin):
     inlines = [InlineImage]
-
 
 admin.site.register(department_logo)
 admin.site.register(department_name)
