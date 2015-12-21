@@ -18,7 +18,7 @@ execeptions = (socket.error,urllib2.HTTPError,urllib2.URLError,httplib.HTTPExcep
 execeptions1 = (socket.error,urllib2.URLError,httplib.HTTPException)
 
 #############################################################################################################################
-connection = MySQLdb.connect(host="localhost",user="root",passwd="197056",db="uth_research_db")
+connection = MySQLdb.connect(host="localhost",user="root",passwd="******",db="uth_research_db")
 connection.set_character_set('utf8')
 cur = connection.cursor()
 cur.execute('SET NAMES utf8;') 
@@ -283,8 +283,8 @@ def find_affiliation(url):
 def get_soup(url):
 
     try :
-        username = "papa"
-        password = "%pa14756"
+        username = "******"
+        password = "*****"
         p = urllib2.HTTPPasswordMgrWithDefaultRealm()
 
         p.add_password(None, url, username, password)
@@ -311,8 +311,8 @@ def get_author_soup(authorID,scopus_machineID,offset,sl):
     author_url = "http://www.scopus.com/results/results.url?sort=plf-f&src=s&nlo=&nlr=&nls=&sid={0}%3a470&sot=aut&sdt=a&sl={1}&s=AU-ID%28{2}%29&cl=t&offset={3}&origin=resultslist&ss=plf-f&ws=r-f&ps=r-f&cs=r-f&cc=10&txGid={4}". format (scopus_machineID,sl,authorID,offset,scopus_machineID)
     print author_url
     try :
-        username = "papa"
-        password = "%pa14756"
+        username = "*****"
+        password = "*****"
         p = urllib2.HTTPPasswordMgrWithDefaultRealm()
 
         p.add_password(None, author_url, username, password)
@@ -399,7 +399,7 @@ def check_database(title,citations,author_name,url):
                 connection.commit()
                 
                 # update also the entry in central database
-                connection_2 = MySQLdb.connect(host="localhost",user="root",passwd="197056",db="uth_research_central_db")
+                connection_2 = MySQLdb.connect(host="localhost",user="*****",passwd="*****",db="uth_research_central_db")
                 connection_2.set_character_set('utf8')
                 x = connection_2.cursor()
                 x.execute("""UPDATE app_publication SET pub_citations=%s WHERE pub_title=%s""",[citations,title])
