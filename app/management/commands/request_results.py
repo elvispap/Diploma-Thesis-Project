@@ -7,7 +7,7 @@ import base64
 import database_processing
 
 
-connection = MySQLdb.connect(host="localhost",user="root",passwd="197056",db="uth_research_db")
+connection = MySQLdb.connect(host="localhost",user="*****",passwd="*****",db="uth_research_db")
 connection.set_character_set('utf8')
 x = connection.cursor()
 x.execute('SET GLOBAL connect_timeout=1000')
